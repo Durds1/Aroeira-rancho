@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Chácara para temporada na beira do lago em Três Ranchos-GO. Até 10 pessoas, 3 quartos, piscina, área gourmet com fogão a lenha, a 3 km da cidade.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Rancho Aroeira, chácara na beira do lago em Três Ranchos">
+<meta property="og:description" content="Até 10 pessoas, 3 quartos, piscina e área gourmet com fogão a lenha. A 3 km da cidade.">
+<meta property="og:url" content="https://durds1.github.io/Aroeira-rancho/">
+<meta property="og:image" content="https://durds1.github.io/Aroeira-rancho/fotos/6.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Piscina, pergolado e a casa do Rancho Aroeira">
+<meta name="theme-color" content="#1e4258">
+<style>html{color-scheme:light}body{margin:0}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
+<title>Rancho Aroeira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Raleway:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a página é um dia no rancho. Começa clara com o lago de manhã, passa pela área gourmet e pela varanda,
+   atravessa o pôr do sol em foto inteira e termina na noite, onde ficam galeria, localização e reserva.
+   Paleta: hospitalidade (azul profundo + dourado) com tons do cerrado (capim, madeira). Tipos: Lora + Raleway. */
+:root{
+  --ceu:#eef3f3;          /* manhã: céu claro sobre a represa */
+  --tarde:#e8eee1;        /* tarde: verde-claro do gramado */
+  --tinta:#15252e;
+  --tinta-2:#46585f;
+  --linha:#ccd8d9;
+  --lago:#1e4258;         /* azul da água */
+  --ouro:#8a5306;         /* sol baixo, usado nas horas */
+  --capim:#46642a;
+  --noite:#0e1b26;
+  --noite-2:#15273a;
+  --noite-tinta:#e6edf1;
+  --noite-tinta-2:#a9bac5;
+  --noite-linha:#2a3f52;
+  --lua:#e2b254;
+  --erro:#b42318;
+  --erro-noite:#ffb4a8;
+  --zap:#1e7a46;
+  --zap-tinta:#ffffff;
+  --serif:"Lora", Georgia, "Times New Roman", serif;
+  --sans:"Raleway", "Segoe UI", system-ui, sans-serif;
+  --gutter:max(16px, 4vw);
+  --raio:18px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ceu:#0f1a21; --tarde:#121d19; --tinta:#e3ecef; --tinta-2:#a3b5bc; --linha:#24343c;
+    --lago:#9cc8de; --ouro:#e2b254; --capim:#a8c47c;
+    --noite:#070f16; --noite-2:#0f1c28; --noite-tinta:#e6edf1; --noite-tinta-2:#a9bac5; --noite-linha:#22364a; --lua:#e2b254;
+    --erro:#ffb4a8; --erro-noite:#ffb4a8; --zap:#2da862; --zap-tinta:#04130a; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ceu:#0f1a21; --tarde:#121d19; --tinta:#e3ecef; --tinta-2:#a3b5bc; --linha:#24343c;
+  --lago:#9cc8de; --ouro:#e2b254; --capim:#a8c47c;
+  --noite:#070f16; --noite-2:#0f1c28; --noite-tinta:#e6edf1; --noite-tinta-2:#a9bac5; --noite-linha:#22364a; --lua:#e2b254;
+  --erro:#ffb4a8; --erro-noite:#ffb4a8; --zap:#2da862; --zap-tinta:#04130a; color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ceu);color:var(--tinta);font-family:var(--sans);font-size:1.0625rem;line-height:1.6;font-weight:500}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;text-wrap:balance;margin:0;letter-spacing:-.01em}
+p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--lago);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:var(--gutter)}
+.faixa{padding-block:clamp(56px,8vw,104px)}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 22px;border-radius:999px;font-family:var(--sans);font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background-color .2s ease, border-color .2s ease, filter .2s ease}
+.btn-zap{background:var(--zap);color:var(--zap-tinta)}
+.btn-zap:hover{filter:brightness(1.08)}
+.btn-borda{border-color:currentColor;background:transparent;color:inherit}
+.btn-borda:hover{background:color-mix(in srgb, currentColor 10%, transparent)}
+.btn svg{flex:none}
+
+/* topo */
+.topo{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--serif);font-weight:600;font-size:1.3rem}
+.topo nav{display:flex;align-items:center;gap:28px;font-weight:600;font-size:.98rem}
+.topo nav a:not(.btn){text-decoration:none;color:var(--tinta-2);padding-block:12px}
+.topo nav a:not(.btn):hover{color:var(--tinta)}
+
+/* abertura */
+.abertura{padding-block:clamp(24px,4vw,48px) clamp(56px,8vw,96px)}
+.abertura-texto{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:end}
+.abertura h1{font-size:clamp(2.5rem,6vw,4.6rem);color:var(--lago)}
+.abertura .lado{display:grid;gap:22px}
+.lead{font-size:1.2rem;color:var(--tinta-2);max-width:40ch}
+.fatos{display:flex;flex-wrap:wrap;gap:10px 22px}
+.fatos li{display:flex;align-items:center;gap:8px;font-weight:600}
+.fatos svg{color:var(--capim);flex:none}
+.acoes{display:flex;flex-wrap:wrap;gap:12px}
+.tripla{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.6vw,20px);margin-top:clamp(32px,5vw,56px);align-items:start}
+.tripla figure{display:grid;gap:10px}
+.tripla img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--raio)}
+.tripla figure:nth-child(1) img{object-position:50% 62%}
+.tripla figure:nth-child(2) img{object-position:50% 50%}
+.tripla figure:nth-child(3) img{object-position:50% 55%}
+.tripla figcaption{display:flex;gap:10px;align-items:baseline;color:var(--tinta-2);font-size:.98rem}
+.hora-mini{font-family:var(--serif);font-style:italic;color:var(--ouro);font-size:1.15rem;font-variant-numeric:tabular-nums}
+
+/* um dia no rancho */
+.cabeca{display:grid;gap:14px;max-width:46rem;margin-bottom:clamp(28px,4vw,48px)}
+.cabeca h2{font-size:clamp(2rem,4.2vw,3rem)}
+.cabeca p{color:var(--tinta-2);max-width:60ch}
+.dia{background:var(--ceu)}
+.tarde{background:var(--tarde)}
+.momento{display:grid;grid-template-columns:5.5rem minmax(0,1fr) minmax(0,1.45fr);gap:clamp(16px,3vw,40px);padding-block:clamp(28px,4vw,44px);border-top:1px solid var(--linha);align-items:start}
+.hora{font-family:var(--serif);font-style:italic;font-weight:500;font-size:2rem;line-height:1;color:var(--ouro);font-variant-numeric:tabular-nums}
+.momento-texto{display:grid;gap:12px;max-width:34rem}
+.momento-texto h3{font-size:clamp(1.45rem,2.6vw,1.9rem)}
+.momento-texto p{color:var(--tinta-2)}
+.fotos{display:grid;gap:12px}
+.fotos img{width:100%;height:var(--h,clamp(240px,32vw,420px));object-fit:cover;border-radius:var(--raio)}
+.fotos.misto{grid-template-columns:3fr 4fr}
+.fotos.tres{grid-template-columns:1fr 1fr}
+.fotos.tres img:first-child{grid-column:1/-1;--h:clamp(220px,26vw,340px)}
+.fotos.tres img:not(:first-child){--h:clamp(160px,18vw,240px)}
+
+/* comodidades */
+.comod{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:0 32px;border-top:1px solid var(--linha)}
+.comod li{display:flex;gap:14px;padding-block:18px;border-bottom:1px solid var(--linha)}
+.comod svg{flex:none;color:var(--capim);margin-top:2px}
+.comod b{display:block;font-weight:700}
+.comod span{color:var(--tinta-2);font-size:.98rem}
+
+/* pôr do sol */
+.por{position:relative;background:var(--noite);color:#fff}
+.por img{width:100%;height:clamp(440px,78vh,760px);object-fit:cover;object-position:50% 48%}
+.por::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgb(0 0 0 / 0) 35%, color-mix(in srgb, var(--noite) 70%, transparent) 72%, var(--noite) 100%);pointer-events:none}
+.por-texto{position:absolute;left:0;right:0;bottom:clamp(24px,5vw,56px);z-index:1}
+.por-texto .wrap{display:grid;grid-template-columns:5.5rem minmax(0,40rem);gap:clamp(16px,3vw,40px)}
+.por .hora{color:var(--lua)}
+.por h3{font-size:clamp(1.8rem,4vw,2.8rem);color:#fff}
+.por p{color:rgb(255 255 255 / .86);margin-top:10px;max-width:46ch}
+
+/* noite */
+.noite{background:var(--noite);color:var(--noite-tinta);--linha:var(--noite-linha);--tinta-2:var(--noite-tinta-2);--ouro:var(--lua);--lago:var(--noite-tinta);--erro:var(--erro-noite)}
+.noite .momento{border-top:1px solid var(--noite-linha)}
+.noite .faixa + .faixa{padding-top:0}
+
+/* quartos */
+.ficha{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;margin:0;border-top:1px solid var(--noite-linha)}
+.ficha div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-block:14px;border-bottom:1px solid var(--noite-linha)}
+.ficha dt{color:var(--noite-tinta-2)}
+.ficha dd{margin:0;font-family:var(--serif);font-weight:600;font-size:1.35rem;color:var(--noite-tinta);font-variant-numeric:tabular-nums;white-space:nowrap}
+.ficha small{font-family:var(--sans);font-size:.9rem;font-weight:500;color:var(--noite-tinta-2)}
+
+/* avaliações */
+.selo-avaliacao{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;font-weight:600;color:var(--tinta);text-underline-offset:4px;min-height:44px}
+.selo-avaliacao .estrelas{color:var(--ouro)}
+.estrelas{display:inline-flex;line-height:0}
+.avaliacoes{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);grid-template-rows:auto auto;gap:clamp(16px,2.4vw,28px)}
+.avaliacao{display:grid;gap:18px;align-content:space-between;background:var(--noite-2);border:1px solid var(--noite-linha);border-radius:var(--raio);padding:clamp(20px,3vw,32px)}
+.avaliacao .estrelas{color:var(--lua)}
+.avaliacao blockquote{margin:0;font-family:var(--serif);font-size:1.15rem;line-height:1.55;color:var(--noite-tinta)}
+.avaliacao.destaque{grid-row:1/3;background:transparent;border:0;padding:0 clamp(0px,2vw,24px) 0 0;align-content:start;gap:22px}
+.avaliacao.destaque blockquote{font-size:clamp(1.35rem,2.4vw,1.8rem);font-style:italic;font-weight:500;line-height:1.45;max-width:36ch}
+.avaliacao figcaption{display:flex;align-items:center;gap:12px;color:var(--noite-tinta-2);font-size:.95rem}
+.avaliacao figcaption strong{display:block;color:var(--noite-tinta);font-size:1rem}
+.inicial{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--lua);color:var(--noite);font-family:var(--serif);font-weight:600;font-size:1.15rem}
+
+/* galeria */
+.galeria{columns:3 240px;column-gap:14px}
+.galeria button{all:unset;display:block;width:100%;margin-bottom:14px;border-radius:14px;overflow:hidden;cursor:zoom-in;break-inside:avoid}
+.galeria button:focus-visible{outline:3px solid var(--lua);outline-offset:3px}
+.galeria img{width:100%;transition:transform .35s ease}
+.galeria img.recorte{aspect-ratio:3/4;object-fit:cover}
+.galeria button:hover img{transform:scale(1.03)}
+.caixa{position:fixed;inset:0;z-index:30;background:rgb(4 10 14 / .95);display:grid;place-items:center;padding:calc(64px + env(safe-area-inset-top,0px)) 16px calc(24px + env(safe-area-inset-bottom,0px))}
+.caixa figure{display:grid;gap:12px;justify-items:center;max-width:100%}
+.caixa img{max-height:78vh;max-width:100%;border-radius:10px;object-fit:contain}
+.caixa img.recorte{aspect-ratio:741/1290;object-fit:cover;height:78vh;width:auto}
+.caixa figcaption{color:#dfe7eb;font-size:.98rem;text-align:center;max-width:50ch}
+.caixa button{position:absolute;width:48px;height:48px;border-radius:999px;border:0;background:rgb(255 255 255 / .16);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;display:grid;place-items:center}
+.caixa button:hover{background:rgb(255 255 255 / .26)}
+.caixa .fechar{top:calc(12px + env(safe-area-inset-top,0px));right:12px}
+.caixa .ant{left:10px;top:50%;transform:translateY(-50%)}
+.caixa .prox{right:10px;top:50%;transform:translateY(-50%)}
+
+/* como chegar */
+.local{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.trajeto{display:grid;gap:0;margin-block:8px 24px}
+.trajeto li{display:grid;grid-template-columns:4.5rem minmax(0,1fr);gap:16px;padding-block:14px;border-top:1px solid var(--noite-linha)}
+.trajeto li:last-child{border-bottom:1px solid var(--noite-linha)}
+.trajeto b{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--lua);font-size:1.2rem;font-variant-numeric:tabular-nums}
+.trajeto span{color:var(--noite-tinta-2)}
+.trajeto strong{color:var(--noite-tinta);display:block}
+.local img{width:100%;aspect-ratio:4/3;max-height:420px;object-fit:cover;border-radius:var(--raio)}
+
+/* reserva */
+.reserva{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);background:var(--noite-2);border:1px solid var(--noite-linha);border-radius:24px;padding:clamp(22px,4vw,48px)}
+.reserva h2{font-size:clamp(2rem,4vw,2.8rem)}
+.reserva .info{display:grid;gap:16px;align-content:start}
+.reserva .info p{color:var(--noite-tinta-2)}
+.numero{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.numero span{font-family:var(--serif);font-size:1.5rem;font-weight:600;user-select:all;font-variant-numeric:tabular-nums}
+.copiar{min-height:44px;padding:8px 16px;font-size:.95rem}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.campo{display:grid;gap:6px;align-content:start}
+.campo.cheio,.cheio{grid-column:1/-1}
+label{font-weight:700;font-size:.98rem}
+.ajuda{font-size:.9rem;color:var(--noite-tinta-2)}
+input,select,textarea{font:inherit;font-weight:500;font-size:1rem;min-height:48px;padding:11px 14px;border-radius:12px;border:1px solid var(--noite-linha);background:var(--noite);color:var(--noite-tinta);width:100%}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--lua);outline-offset:1px}
+input[aria-invalid="true"]{border-color:var(--erro)}
+textarea{min-height:96px;resize:vertical}
+.erro{color:var(--erro);font-size:.92rem;font-weight:600}
+.resumo{border-left:3px solid var(--lua);padding:4px 0 4px 14px;color:var(--noite-tinta);font-weight:600}
+.previa{font-size:.92rem;color:var(--noite-tinta-2);white-space:pre-wrap;word-break:break-word;background:var(--noite);border-radius:12px;padding:12px 14px}
+.previa-rotulo{font-size:.9rem;color:var(--noite-tinta-2);font-weight:600}
+
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px 96px;border-top:1px solid var(--noite-linha);color:var(--noite-tinta-2);font-size:.95rem}
+
+.zap-fixo{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;box-shadow:0 8px 24px rgb(0 0 0 / .28)}
+
+@media (max-width:900px){
+  .abertura-texto,.local,.reserva,.avaliacoes{grid-template-columns:1fr}
+  .avaliacao.destaque{grid-row:auto;padding:0 0 8px}
+  .ficha{grid-template-columns:1fr}
+  .momento{grid-template-columns:1fr;gap:14px}
+  .hora{font-size:1.6rem}
+  .por-texto .wrap{grid-template-columns:1fr;gap:6px}
+  .topo nav a:not(.btn){display:none}
+}
+@media (max-width:640px){
+  .tripla{grid-template-columns:1fr 1fr}
+  .tripla figure:first-child{grid-column:1/-1}
+  .tripla figure:first-child img{aspect-ratio:16/10}
+  .tripla figure:not(:first-child) img{aspect-ratio:1/1}
+  .fotos.misto{grid-template-columns:1fr 1fr}
+  .fotos img{--h:240px}
+  form{grid-template-columns:1fr}
+  .topo .btn span{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap topo">
+  <a class="marca" href="#inicio">
+    <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="12" r="5.5" fill="none" stroke="var(--ouro)" stroke-width="2.4"/><path d="M3 21q3-2.4 6 0t6 0 6 0 6 0M6 26q2.3-1.8 4.6 0t4.6 0 4.6 0 4.6 0" fill="none" stroke="var(--lago)" stroke-width="2.4" stroke-linecap="round"/></svg>
+    Rancho Aroeira
+  </a>
+  <nav aria-label="Seções do site">
+    <a href="#um-dia">Um dia aqui</a>
+    <a href="#fotos">Fotos</a>
+    <a href="#como-chegar">Como chegar</a>
+    <a class="btn btn-zap js-zap" href="#reserva" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.2-.2-.2-.5-.4Z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
+</header>
+
+<main id="inicio">
+  <!-- Abertura -->
+  <section class="wrap abertura">
+    <div class="abertura-texto">
+      <h1>Casa na beira do lago em Três Ranchos</h1>
+      <div class="lado">
+        <p class="lead">Piscina, área gourmet com fogão a lenha e gramado que desce até a água. Um lugar para juntar a família ou os amigos no fim de semana.</p>
+        <ul class="fatos">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 5.2a3 3 0 0 1 0 5.6M18 14.3c1.8.8 3 2.7 3 5.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Até 10 hóspedes</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19V7M21 19v-5a3 3 0 0 0-3-3h-8v5M3 14h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="11" r="1.8" fill="none" stroke="currentColor" stroke-width="2"/></svg>3 quartos</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2ZM6 12V6a2 2 0 0 1 4 0M8 19l-1 2M16 19l1 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>4 banheiros</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>3 km do centro</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 15c2.5-2 5-2 7.5 0s5 2 7.5 0 3.5-1.5 5-1M2 19.5c2.5-2 5-2 7.5 0s5 2 7.5 0 3.5-1.5 5-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Acesso direto ao lago</li>
+        </ul>
+        <a class="selo-avaliacao" href="#avaliacoes">
+          <span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 120 22" width="96" height="18" aria-hidden="true"><g fill="currentColor"><path id="e" d="M11 1.5l2.8 6 6.5.7-4.9 4.4 1.4 6.4L11 15.7 5.2 19l1.4-6.4L1.7 8.2l6.5-.7z"/><use href="#e" x="24.5"/><use href="#e" x="49"/><use href="#e" x="73.5"/><use href="#e" x="98"/></g></svg></span>
+          Veja o que os hóspedes do Airbnb disseram
+        </a>
+        <div class="acoes">
+          <a class="btn btn-zap js-zap" href="#reserva" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+            Consultar datas no WhatsApp
+          </a>
+          <a class="btn btn-borda" href="#fotos">Ver todas as fotos</a>
+        </div>
+      </div>
+    </div>
+    <div class="tripla">
+      <figure>
+        <img src="fotos/13.jpg" width="900" height="1600" alt="Piscina refletindo uma árvore, com gramado e o lago azul ao fundo" fetchpriority="high">
+        <figcaption><span class="hora-mini">7h</span>Lago calmo na frente da piscina</figcaption>
+      </figure>
+      <figure>
+        <img src="fotos/9.jpg" width="1200" height="1600" alt="Pôr do sol alaranjado atrás de uma árvore, visto da beira da piscina">
+        <figcaption><span class="hora-mini">18h</span>Pôr do sol visto da piscina</figcaption>
+      </figure>
+      <figure>
+        <img src="fotos/15.jpg" width="1179" height="1600" alt="Árvore iluminada à noite ao lado da piscina, com poltronas brancas no gramado">
+        <figcaption><span class="hora-mini">20h</span>Jardim iluminado à noite</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Um dia no rancho -->
+  <section class="faixa dia" id="um-dia">
+    <div class="wrap">
+      <div class="cabeca">
+        <h2>Um dia no Rancho Aroeira</h2>
+        <p>Do café da manhã com vista para o lago até a noite com o jardim aceso. Veja como cada canto da chácara é aproveitado ao longo do dia.</p>
+      </div>
+      <ol>
+        <li class="momento">
+          <span class="hora">7h</span>
+          <div class="momento-texto">
+            <h3>Café olhando o lago</h3>
+            <p>Cedo, a água fica parada e a ilha aparece inteira na frente da casa. A piscina em L fica entre o gramado e a margem.</p>
+          </div>
+          <div class="fotos"><img src="fotos/12.jpg" width="900" height="1600" style="object-position:50% 52%" alt="Piscina em L com borda de pedra, gramado e o lago calmo com uma ilha ao fundo" loading="lazy"></div>
+        </li>
+        <li class="momento">
+          <span class="hora">10h</span>
+          <div class="momento-texto">
+            <h3>Piscina e gramado até a água</h3>
+            <p>A piscina tem deck amplo e borda em pedra. O gramado desce até a beira da represa, com espaço para brincar, caminhar e ver o lago de perto.</p>
+          </div>
+          <div class="fotos misto">
+            <img src="fotos/8.jpg" width="1200" height="1600" style="object-position:50% 60%" alt="Piscina com deck e gramado, o lago e a vegetação do cerrado ao fundo em dia nublado" loading="lazy">
+            <img src="fotos/14.jpg" width="900" height="1600" style="object-position:50% 55%" alt="Vista da sombra das árvores para a piscina, o pergolado e o lago azul" loading="lazy">
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="faixa tarde">
+    <div class="wrap">
+      <ol>
+        <li class="momento" style="border-top:0;padding-top:0">
+          <span class="hora">12h</span>
+          <div class="momento-texto">
+            <h3>Almoço na área gourmet</h3>
+            <p>Churrasqueira, fogão a lenha e forno de tijolinho ficam lado a lado, perto da mesa rústica comprida com bancos. A cozinha da casa tem geladeira e fogão de seis bocas com forno.</p>
+          </div>
+          <div class="fotos tres">
+            <img src="fotos/4.jpg" width="741" height="1600" style="object-position:50% 58%" alt="Área gourmet com mesa rústica comprida, banco de madeira, fogão a lenha e forno de tijolinho" loading="lazy">
+            <img src="fotos/5.jpg" width="741" height="1600" style="object-position:50% 55%" alt="Área gourmet com churrasqueira de tijolinho, bancada e cadeiras empilhadas" loading="lazy">
+            <img src="fotos/2.jpg" width="741" height="1600" style="object-position:50% 52%" alt="Cozinha com geladeira inox, fogão de seis bocas, pia e armários" loading="lazy">
+          </div>
+        </li>
+        <li class="momento">
+          <span class="hora">15h</span>
+          <div class="momento-texto">
+            <h3>Sombra na varanda</h3>
+            <p>A varanda coberta tem dois sofás e mesa de madeira de demolição, de frente para o jardim. Lá embaixo, o pergolado ao lado da piscina tem mesa, bancos e guarda-sol.</p>
+          </div>
+          <div class="fotos misto">
+            <img src="fotos/3.jpg" width="741" height="1600" style="object-position:50% 62%" alt="Varanda coberta com telhado aparente, dois sofás listrados e mesa de demolição" loading="lazy">
+            <img src="fotos/6.jpg" width="1600" height="1200" style="object-position:40% 50%" alt="Pergolado com guarda-sol azul ao lado da piscina e escada que sobe até a casa" loading="lazy">
+          </div>
+        </li>
+      </ol>
+
+      <div class="cabeca" style="margin-top:clamp(48px,7vw,88px)">
+        <h2>O que tem na chácara</h2>
+      </div>
+      <ul class="comod">
+        <li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 15c2.5-2 5-2 7.5 0s5 2 7.5 0 3.5-1.5 5-1M2 19.5c2.5-2 5-2 7.5 0s5 2 7.5 0 3.5-1.5 5-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><div><b>Acesso ao lago</b><span>Gramado até a margem da represa</span></div></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10h18v9H3zM7 10V5h3v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><div><b>Piscina</b><span>Em L, com deck e borda em pedra</span></div></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c2 3 4 4.5 4 8a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><div><b>Churrasqueira e fogão a lenha</b><span>Com forno de tijolinho</span></div></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18M5 9v10M19 9v10M4 5h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><div><b>Mesa rústica comprida</b><span>Com bancos, para a turma toda</span></div></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 10h14M9 6v1M9 13v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><div><b>Cozinha equipada</b><span>Geladeira e fogão de seis bocas</span></div></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7M6 9.5V20h12V9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><div><b>Varanda coberta</b><span>Sofás e mesa de demolição</span></div></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8h16v12M4 12h16M8 8v12M12 8v12M16 8v12M2 8h20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><div><b>Pergolado com mesa</b><span>Ao lado da piscina</span></div></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14l-1.5-6h-11L5 17ZM7 17v2M17 17v2M8 11l1-3h6l1 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><div><b>Estacionamento</b><span>Vaga para carros dentro da chácara</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Pôr do sol -->
+  <section class="por" aria-labelledby="titulo-por">
+    <img src="fotos/10.jpg" width="1200" height="1600" alt="Céu lilás e dourado no fim da tarde, com a silhueta de uma árvore e do pergolado" loading="lazy">
+    <div class="por-texto">
+      <div class="wrap">
+        <span class="hora">18h</span>
+        <div>
+          <h3 id="titulo-por">O sol se põe na frente da piscina</h3>
+          <p>A casa fica de frente para o poente. No fim da tarde, o céu muda de cor atrás das árvores do gramado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Noite -->
+  <div class="noite">
+    <section class="faixa">
+      <div class="wrap">
+        <ol>
+          <li class="momento" style="border-top:0;padding-top:0">
+            <span class="hora">20h</span>
+            <div class="momento-texto">
+              <h3>Noite no jardim</h3>
+              <p>As árvores, a escada e a piscina têm iluminação. Do outro lado do lago aparecem as luzes da cidade.</p>
+            </div>
+            <div class="fotos tres">
+              <img src="fotos/7.jpg" width="1600" height="1200" style="object-position:50% 45%" alt="Casa e jardim iluminados à noite, com árvores acesas e a piscina em primeiro plano" loading="lazy">
+              <img src="fotos/15.jpg" width="1179" height="1600" style="object-position:50% 45%" alt="Árvore iluminada ao lado da piscina, com poltronas brancas" loading="lazy">
+              <img src="fotos/1.jpg" width="1200" height="1600" style="object-position:50% 50%" alt="Piscina ao anoitecer com o lago e as luzes da cidade ao fundo" loading="lazy">
+            </div>
+          </li>
+          <li class="momento" id="quartos">
+            <span class="hora">22h</span>
+            <div class="momento-texto">
+              <h3>Hora de descansar</h3>
+              <p>A casa tem três quartos e quatro banheiros. Dois banheiros ficam dentro da casa, e um deles é de suíte. Os outros dois são externos.</p>
+            </div>
+            <dl class="ficha">
+              <div><dt>Quartos</dt><dd>3</dd></div>
+              <div><dt>Camas de casal</dt><dd>3</dd></div>
+              <div><dt>Colchões de solteiro</dt><dd>3</dd></div>
+              <div><dt>Banheiros dentro da casa</dt><dd>2 <small>(1 suíte)</small></dd></div>
+              <div><dt>Banheiros externos</dt><dd>2</dd></div>
+              <div><dt>Hóspedes</dt><dd>até 10</dd></div>
+            </dl>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="faixa" id="fotos">
+      <div class="wrap">
+        <div class="cabeca">
+          <h2>Todas as fotos</h2>
+          <p>Toque em uma foto para ver em tamanho grande.</p>
+        </div>
+        <div class="galeria" id="galeria"></div>
+      </div>
+    </section>
+
+    <section class="faixa" id="como-chegar">
+      <div class="wrap local">
+        <div>
+          <div class="cabeca" style="margin-bottom:12px">
+            <h2>Como chegar</h2>
+            <p>Três Ranchos fica no sudeste de Goiás, às margens do lago da represa de Emborcação. A chácara está perto do centro, então dá para ir ao mercado ou à padaria e voltar em poucos minutos.</p>
+          </div>
+          <ol class="trajeto">
+            <li><b>0 km</b><div><strong>Centro de Três Ranchos</strong><span>Mercado, padaria e restaurantes</span></div></li>
+            <li><b>3 km</b><div><strong>Rancho Aroeira</strong><span>Cerca de 5 minutos de carro</span></div></li>
+          </ol>
+          <a class="btn btn-borda" href="https://www.google.com/maps/search/?api=1&query=Tr%C3%AAs+Ranchos+GO" target="_blank" rel="noopener">Abrir Três Ranchos no Google Maps</a>
+        </div>
+        <img src="fotos/14.jpg" width="900" height="1600" style="object-position:50% 60%" alt="Gramado sombreado com vista para a piscina, o pergolado e o lago" loading="lazy">
+      </div>
+    </section>
+
+    <section class="faixa" id="avaliacoes">
+      <div class="wrap">
+        <div class="cabeca">
+          <h2>Quem já ficou aqui</h2>
+          <p>Avaliações públicas de hóspedes que reservaram pelo Airbnb.</p>
+        </div>
+        <div class="avaliacoes">
+          <figure class="avaliacao destaque">
+            <span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 120 22" width="110" height="20" aria-hidden="true"><g fill="currentColor"><use href="#e"/><use href="#e" x="24.5"/><use href="#e" x="49"/><use href="#e" x="73.5"/><use href="#e" x="98"/></g></svg></span>
+            <blockquote>Vista maravilhosa! Só pela vista já vale a pena. Churrasqueira, fogão a lenha, tudo excelente. Dentro da casa é simples, mas aconchegante. O pessoal foi muito solícito e nos auxiliou em tudo que precisamos. Voltaremos mais vezes. Recomendo.</blockquote>
+            <figcaption><span class="inicial" aria-hidden="true">M</span><span><strong>Marcus</strong>Ficou 2 noites em maio</span></figcaption>
+          </figure>
+          <figure class="avaliacao">
+            <span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 120 22" width="96" height="18" aria-hidden="true"><g fill="currentColor"><use href="#e"/><use href="#e" x="24.5"/><use href="#e" x="49"/><use href="#e" x="73.5"/><use href="#e" x="98"/></g></svg></span>
+            <blockquote>Fantástico! Anfitrião super acolhedor, vista incrível, casa aconchegante e muito bem localizada. Um paraíso mesmo.</blockquote>
+            <figcaption><span class="inicial" aria-hidden="true">R</span><span><strong>Renan</strong>Ficou 2 noites em julho</span></figcaption>
+          </figure>
+          <figure class="avaliacao">
+            <span class="estrelas" role="img" aria-label="5 de 5 estrelas"><svg viewBox="0 0 120 22" width="96" height="18" aria-hidden="true"><g fill="currentColor"><use href="#e"/><use href="#e" x="24.5"/><use href="#e" x="49"/><use href="#e" x="73.5"/><use href="#e" x="98"/></g></svg></span>
+            <blockquote>Local com uma vista espetacular.</blockquote>
+            <figcaption><span class="inicial" aria-hidden="true">B</span><span><strong>Beatriz</strong>Ficou 1 noite em abril</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="faixa" id="reserva">
+      <div class="wrap">
+        <div class="reserva">
+          <div class="info">
+            <h2>Pedir uma reserva</h2>
+            <p>Escolha as datas e o número de pessoas. Ao tocar em enviar, o WhatsApp abre com a mensagem pronta. Respondemos com a disponibilidade e o valor.</p>
+            <p>Se preferir, chame direto neste número:</p>
+            <div class="numero">
+              <span id="fone"></span>
+              <button type="button" class="btn btn-borda copiar" id="copiar">Copiar número</button>
+            </div>
+            <p class="ajuda" id="copiado" aria-live="polite"></p>
+          </div>
+          <form id="form-reserva" novalidate>
+            <div class="campo">
+              <label for="chegada">Chegada</label>
+              <input type="date" id="chegada">
+            </div>
+            <div class="campo">
+              <label for="saida">Saída</label>
+              <input type="date" id="saida" aria-describedby="erro-saida">
+              <span class="erro" id="erro-saida" aria-live="polite"></span>
+            </div>
+            <div class="campo">
+              <label for="pessoas">Número de pessoas</label>
+              <select id="pessoas">
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option selected>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+              </select>
+              <span class="ajuda">A casa recebe até 10 pessoas.</span>
+            </div>
+            <div class="campo">
+              <label for="nome">Seu nome</label>
+              <input type="text" id="nome" autocomplete="name">
+            </div>
+            <div class="campo cheio">
+              <label for="recado">Recado (opcional)</label>
+              <textarea id="recado" aria-describedby="ajuda-recado"></textarea>
+              <span class="ajuda" id="ajuda-recado">Por exemplo: aniversário, horário de chegada ou alguma dúvida.</span>
+            </div>
+            <p class="cheio resumo" id="resumo" aria-live="polite"></p>
+            <div class="cheio campo">
+              <span class="previa-rotulo">Mensagem que será enviada</span>
+              <div class="previa" id="previa"></div>
+            </div>
+            <div class="cheio"><a class="btn btn-zap" id="enviar" href="#" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+              Enviar pedido pelo WhatsApp</a></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="wrap">
+      <span>Rancho Aroeira, Três Ranchos (GO)</span>
+      <span>Chácara para temporada na beira do lago, para até 10 pessoas</span>
+    </footer>
+  </div>
+</main>
+
+<a class="btn btn-zap zap-fixo js-zap" href="#reserva" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.2-.2-.2-.5-.4Z"/></svg>
+  WhatsApp
+</a>
+
+<div class="caixa" id="caixa" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button type="button" class="fechar" id="fechar" aria-label="Fechar foto">×</button>
+  <button type="button" class="ant" id="ant" aria-label="Foto anterior">‹</button>
+  <figure>
+    <img id="caixa-img" alt="">
+    <figcaption id="caixa-legenda"></figcaption>
+  </figure>
+  <button type="button" class="prox" id="prox" aria-label="Próxima foto">›</button>
+</div>
+
+<script>
+// Troque pelo número real: só dígitos, com 55 + DDD.
+const WHATSAPP = "5564993274109";
+
+// [arquivo, descrição, é print de celular com faixas pretas]
+const fotos = [
+  ["13.jpg","Piscina refletindo a árvore, com o lago e a ilha ao fundo",false],
+  ["6.jpg","Piscina, pergolado e a casa no alto do gramado",false],
+  ["9.jpg","Pôr do sol alaranjado atrás da árvore, visto da piscina",false],
+  ["4.jpg","Área gourmet com mesa rústica e fogão a lenha",true],
+  ["12.jpg","Piscina em L com o lago calmo ao fundo",false],
+  ["3.jpg","Varanda coberta com sofás e mesa de demolição",true],
+  ["1.jpg","Piscina ao anoitecer com as luzes da cidade do outro lado do lago",false],
+  ["5.jpg","Área gourmet com churrasqueira e forno de tijolinho",true],
+  ["8.jpg","Piscina e gramado com o lago em dia nublado",false],
+  ["15.jpg","Árvore iluminada à noite ao lado da piscina",false],
+  ["2.jpg","Cozinha com geladeira e fogão de seis bocas",true],
+  ["10.jpg","Céu lilás e dourado no fim da tarde",false],
+  ["7.jpg","Casa e jardim iluminados à noite",false],
+  ["14.jpg","Vista da sombra das árvores para a piscina e o lago",false]
+];
+
+// Galeria
+const galeria = document.getElementById("galeria");
+fotos.forEach(([arq, alt, recorte], i) => {
+  const b = document.createElement("button");
+  b.type = "button";
+  b.setAttribute("aria-label", "Ampliar foto: " + alt);
+  const img = document.createElement("img");
+  img.src = "fotos/" + arq; img.alt = alt; img.loading = "lazy";
+  if (recorte) img.className = "recorte";
+  b.appendChild(img);
+  b.addEventListener("click", () => abrir(i));
+  galeria.appendChild(b);
+});
+
+const caixa = document.getElementById("caixa");
+const caixaImg = document.getElementById("caixa-img");
+const legenda = document.getElementById("caixa-legenda");
+let atual = 0, voltarPara = null;
+function mostrar(i){
+  atual = (i + fotos.length) % fotos.length;
+  const [arq, alt, recorte] = fotos[atual];
+  caixaImg.src = "fotos/" + arq; caixaImg.alt = alt;
+  caixaImg.className = recorte ? "recorte" : "";
+  legenda.textContent = alt + " (" + (atual + 1) + " de " + fotos.length + ")";
+}
+function abrir(i){ voltarPara = document.activeElement; mostrar(i); caixa.hidden = false; document.body.style.overflow = "hidden"; document.getElementById("fechar").focus(); }
+function fechar(){ caixa.hidden = true; document.body.style.overflow = ""; if (voltarPara) voltarPara.focus(); }
+document.getElementById("fechar").addEventListener("click", fechar);
+document.getElementById("ant").addEventListener("click", () => mostrar(atual - 1));
+document.getElementById("prox").addEventListener("click", () => mostrar(atual + 1));
+caixa.addEventListener("click", e => { if (e.target === caixa) fechar(); });
+document.addEventListener("keydown", e => {
+  if (caixa.hidden) return;
+  if (e.key === "Escape") fechar();
+  else if (e.key === "ArrowLeft") mostrar(atual - 1);
+  else if (e.key === "ArrowRight") mostrar(atual + 1);
+});
+
+// Número visível e botão de copiar
+const digitos = WHATSAPP.replace(/\D/g, "").replace(/^55/, "");
+const foneFormatado = `(${digitos.slice(0,2)}) ${digitos.slice(2,7)}-${digitos.slice(7)}`;
+document.getElementById("fone").textContent = foneFormatado;
+document.getElementById("copiar").addEventListener("click", () => {
+  const aviso = document.getElementById("copiado");
+  const selecionar = () => {
+    const r = document.createRange(); r.selectNodeContents(document.getElementById("fone"));
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    aviso.textContent = "Número selecionado. Use Ctrl+C ou segure para copiar.";
+  };
+  try {
+    navigator.clipboard.writeText(foneFormatado).then(() => { aviso.textContent = "Número copiado."; }, selecionar);
+  } catch (e) { selecionar(); }
+});
+
+// Pedido de reserva
+const $ = id => document.getElementById(id);
+const paraData = v => v ? new Date(v + "T12:00:00") : null;
+const br = v => v ? v.split("-").reverse().join("/") : "";
+function diarias(){
+  const a = paraData($("chegada").value), b = paraData($("saida").value);
+  if (!a || !b) return null;
+  return Math.round((b - a) / 86400000);
+}
+function validar(){
+  const n = diarias();
+  const ruim = n !== null && n < 1;
+  $("saida").setAttribute("aria-invalid", ruim ? "true" : "false");
+  $("erro-saida").textContent = ruim ? "A saída precisa ser pelo menos um dia depois da chegada." : "";
+  return !ruim;
+}
+function mensagem(){
+  const linhas = ["Olá! Vi o site do Rancho Aroeira e quero consultar uma reserva."];
+  const nome = $("nome").value.trim();
+  if (nome) linhas.push("Nome: " + nome);
+  if ($("chegada").value) linhas.push("Chegada: " + br($("chegada").value));
+  if ($("saida").value) linhas.push("Saída: " + br($("saida").value));
+  linhas.push("Pessoas: " + $("pessoas").value);
+  const recado = $("recado").value.trim();
+  if (recado) linhas.push("Recado: " + recado);
+  return linhas.join("\n");
+}
+function atualizar(){
+  const ok = validar();
+  const n = diarias();
+  const p = Number($("pessoas").value);
+  const pessoas = p === 1 ? "1 pessoa" : p + " pessoas";
+  $("resumo").textContent = ok && n ? `${n} ${n === 1 ? "diária" : "diárias"} para ${pessoas}` : `Pedido para ${pessoas}. As datas podem ficar em branco se ainda estiver decidindo.`;
+  const txt = mensagem();
+  $("previa").textContent = txt;
+  const url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(txt);
+  $("enviar").href = url;
+  document.querySelectorAll(".js-zap").forEach(a => a.href = url);
+}
+const hoje = new Date();
+const hojeISO = new Date(hoje.getTime() - hoje.getTimezoneOffset() * 60000).toISOString().slice(0,10);
+$("chegada").min = hojeISO; $("saida").min = hojeISO;
+$("chegada").addEventListener("change", () => { $("saida").min = $("chegada").value || hojeISO; });
+["chegada","saida","pessoas","nome","recado"].forEach(id => $(id).addEventListener("input", atualizar));
+$("enviar").addEventListener("click", e => {
+  if (!validar()) { e.preventDefault(); $("saida").focus(); }
+});
+$("form-reserva").addEventListener("submit", e => e.preventDefault());
+atualizar();
+</script>
+</body>
+</html>
